@@ -2,8 +2,10 @@ package com.atguigu.test;
 
 
 import java.util.Random;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReadWriteLock;
 
 /**
  * @author 姽辫
@@ -47,7 +49,5 @@ public class SemaphoreDemo {
             }, String.valueOf(i)).start();
         }
 
-
     }
-
 }

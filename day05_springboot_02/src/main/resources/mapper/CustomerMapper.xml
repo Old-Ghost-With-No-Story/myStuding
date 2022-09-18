@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atguigu.boot.mapper.CustomerMapper">
+
+    <insert id="add" parameterType="customer" useGeneratedKeys="true" keyProperty="id">
+        insert into t_customer (cname, age, phone, sex)
+        values (#{cname}, #{age}, #{phone}, #{sex})
+    </insert>
+    <select parameterType="int" id="getById" resultType="com.atguigu.boot.entities.Customer">
+        select *
+        from t_customer
+        where id = #{id}
+    </select>
+    <select id="list" resultType="com.atguigu.boot.entities.Customer">
+        select *
+        from t_customer
+    </select>
+
+</mapper>
+
